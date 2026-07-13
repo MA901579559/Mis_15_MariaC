@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mis 15 - María Camila</title>
+<title>Mis 15 Años - María Camila</title>
 
-<meta property="og:title" content="Mis 15 - María Camila">
-<meta property="og:description" content="Una noche mágica te espera ✨">
+<meta property="og:title" content="Mis 15 Años - María Camila">
+<meta property="og:description" content="Celebración de 15 años">
 <meta property="og:type" content="website">
 
 <style>
@@ -20,114 +20,146 @@
 
 body{
     min-height:100vh;
-    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         180deg,
-        #f5f9ff,
-        #dfeaf8,
-        #c7d7eb
+        #f8fbff,
+        #e6eef8,
+        #d4e0ef
     );
-
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
+    overflow:hidden;
 }
 
 .container{
     text-align:center;
-    position:relative;
-    z-index:5;
     width:100%;
+    max-width:650px;
+    padding:20px;
 }
 
-.title{
-    margin-bottom:30px;
-    color:#b08a2e;
-    text-shadow:0 0 8px rgba(255,215,0,.4);
+.titulo{
+    color:#b28b3c;
+    margin-bottom:15px;
 }
 
-.title h1{
-    font-size:clamp(35px,7vw,60px);
+.titulo h2{
+    font-size:clamp(22px,5vw,34px);
+}
+
+.nombre{
+    font-size:clamp(42px,8vw,68px);
+    color:#c59b38;
+    margin-bottom:10px;
     line-height:1.1;
+
+    text-shadow:
+    0 2px 4px rgba(0,0,0,.08);
 }
 
-.title p{
-    margin-top:15px;
-    color:#8a7446;
-    font-size:clamp(15px,3vw,22px);
-}
-
-.envelope-wrapper{
-    width:min(400px,90vw);
-    height:min(400px,90vw);
-    margin:auto;
-    position:relative;
+.sub{
+    color:#7b7b7b;
+    margin-bottom:35px;
+    font-size:clamp(14px,3vw,18px);
 }
 
 .envelope{
-    width:100%;
-    height:100%;
+    width:min(320px,85vw);
+    height:220px;
+    margin:auto;
     position:relative;
+    cursor:pointer;
 }
 
-.flap{
+.base{
     position:absolute;
-    background:#f8fbff;
-    transition:1.5s ease;
+    width:100%;
+    height:100%;
+    background:#ffffff;
+    border-radius:8px;
+
     box-shadow:
-    inset 0 0 15px rgba(255,255,255,.9),
-    0 5px 20px rgba(0,0,0,.08);
+    0 15px 35px rgba(0,0,0,.12);
 }
+
+/* solapa superior */
 
 .top{
-    width:100%;
-    height:50%;
+    position:absolute;
     top:0;
-    clip-path:polygon(0 0,100% 0,50% 100%);
-    transform-origin:top center;
+    width:100%;
+    height:110px;
+
+    background:#f8fbff;
+
+    clip-path:
+    polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:top;
+    transition:1.4s ease;
 }
 
-.bottom{
-    width:100%;
-    height:50%;
-    bottom:0;
-    clip-path:polygon(0 100%,100% 100%,50% 0);
-    transform-origin:bottom center;
-}
+/* laterales */
 
 .left{
+    position:absolute;
+    left:0;
+    top:0;
+
     width:50%;
     height:100%;
-    left:0;
-    clip-path:polygon(0 0,100% 50%,0 100%);
-    transform-origin:left center;
+
+    background:#eef4fb;
+
+    clip-path:
+    polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
+
+    transition:1.4s ease;
 }
 
 .right{
+    position:absolute;
+    right:0;
+    top:0;
+
     width:50%;
     height:100%;
-    right:0;
-    clip-path:polygon(100% 0,0 50%,100% 100%);
-    transform-origin:right center;
+
+    background:#eef4fb;
+
+    clip-path:
+    polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+
+    transition:1.4s ease;
 }
 
 .open .top{
-    transform:translateY(-140px) rotateX(50deg);
-}
-
-.open .bottom{
-    transform:translateY(140px) rotateX(-50deg);
+    transform:
+    rotateX(180deg);
 }
 
 .open .left{
-    transform:translateX(-140px);
+    transform:
+    translateX(-30px);
 }
 
 .open .right{
-    transform:translateX(140px);
+    transform:
+    translateX(30px);
 }
 
 .seal{
@@ -138,117 +170,108 @@ body{
 
     transform:translate(-50%,-50%);
 
-    width:80px;
-    height:80px;
+    width:85px;
+    height:85px;
 
     border-radius:50%;
 
     background:
     radial-gradient(
         circle at 30% 30%,
-        #fff4b5,
-        #e0b53a 45%,
-        #b5841f 80%,
-        #8d6517 100%
+        #fff5bf,
+        #f5d36c,
+        #d4af37,
+        #9d7722
     );
-
-    border:3px solid rgba(255,255,255,.4);
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    color:white;
-    font-weight:bold;
-    font-size:20px;
-
-    cursor:pointer;
-
     box-shadow:
-    inset 0 2px 10px rgba(255,255,255,.7),
-    inset 0 -5px 8px rgba(0,0,0,.25),
-    0 10px 25px rgba(0,0,0,.2),
-    0 0 25px rgba(212,175,55,.8);
+    inset 0 4px 8px rgba(255,255,255,.8),
+    inset 0 -6px 8px rgba(0,0,0,.2),
+    0 8px 18px rgba(0,0,0,.15);
+
+    z-index:20;
 
     animation:pulse 2s infinite;
+}
 
-    z-index:100;
+.seal span{
+
+    font-style:italic;
+    font-size:36px;
+    font-weight:bold;
+
+    color:#fff5d5;
+
+    text-shadow:
+    0 1px 2px rgba(0,0,0,.2);
 }
 
 @keyframes pulse{
 
     0%{
-        transform:translate(-50%,-50%) scale(1);
+        transform:
+        translate(-50%,-50%)
+        scale(1);
     }
 
     50%{
-        transform:translate(-50%,-50%) scale(1.08);
+        transform:
+        translate(-50%,-50%)
+        scale(1.05);
     }
 
     100%{
-        transform:translate(-50%,-50%) scale(1);
+        transform:
+        translate(-50%,-50%)
+        scale(1);
     }
+
 }
 
-.star{
+.hint{
+    margin-top:25px;
+    color:#666;
+}
+
+.message{
+    opacity:0;
+    transition:1s;
+    margin-top:30px;
+
+    color:#b28b3c;
+    font-size:20px;
+}
+
+.show{
+    opacity:1;
+}
+
+.spark{
     position:absolute;
-    pointer-events:none;
-    font-size:24px;
-    animation:fly 3s linear forwards;
+    animation:subir 2.5s linear forwards;
+    font-size:22px;
 }
 
-@keyframes fly{
+@keyframes subir{
 
     from{
         opacity:1;
         transform:
-        translate(0,0)
-        scale(.5);
+        translateY(0)
+        scale(.6);
     }
 
     to{
         opacity:0;
         transform:
-        translate(
-        calc(var(--x)*1px),
-        calc(var(--y)*1px))
-        scale(1.6);
+        translateY(-220px)
+        scale(1.4);
     }
 
-}
-
-.message{
-    margin-top:30px;
-    opacity:0;
-    transition:1s;
-    color:#b08a2e;
-    font-size:22px;
-}
-
-.message.show{
-    opacity:1;
-}
-
-.hint{
-    margin-top:25px;
-    color:#6e6e6e;
-}
-
-.moon{
-    position:absolute;
-    right:50px;
-    top:40px;
-
-    width:100px;
-    height:100px;
-
-    border-radius:50%;
-
-    background:white;
-
-    box-shadow:
-    0 0 30px white,
-    0 0 70px rgba(255,255,255,.7);
 }
 
 </style>
@@ -256,43 +279,39 @@ body{
 
 <body>
 
-<div class="moon"></div>
-
 <div class="container">
 
-    <div class="title">
-        <h1>
-            Los 15 años de<br>
-            María Camila
-        </h1>
-
-        <p>
-            ✨ Una noche mágica te espera ✨
-        </p>
+    <div class="titulo">
+        <h2>👑 Mis 15 Años 👑</h2>
     </div>
 
-    <div class="envelope-wrapper">
+    <div class="nombre">
+        María Camila
+    </div>
 
-        <div class="envelope" id="envelope">
+    <div class="sub">
+        Celebración de 15 años
+    </div>
 
-            <div class="flap top"></div>
-            <div class="flap bottom"></div>
-            <div class="flap left"></div>
-            <div class="flap right"></div>
+    <div class="envelope" id="envelope">
 
-        </div>
+        <div class="base"></div>
+
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
 
         <div class="seal" id="seal">
-            MC
+            <span>15</span>
         </div>
 
     </div>
 
     <div class="hint" id="hint">
-        Toca el sello para abrir la invitación
+        Toca el sello para abrir
     </div>
 
-    <div class="message" id="message">
+    <div class="message" id="msg">
         ✨ Has recibido una invitación muy especial ✨
         <br><br>
         Abriendo invitación...
@@ -315,50 +334,41 @@ seal.addEventListener("click",()=>{
 
     envelope.classList.add("open");
 
-    seal.style.display="none";
-
-    document.getElementById("hint")
+    document
+    .getElementById("hint")
     .style.display="none";
 
-    document.getElementById("message")
+    seal.style.display="none";
+
+    document
+    .getElementById("msg")
     .classList.add("show");
 
     const rect =
     envelope.getBoundingClientRect();
 
-    const icons =
-    ["⭐","✨","🌟","✦"];
+    for(let i=0;i<20;i++){
 
-    for(let i=0;i<80;i++){
-
-        const star =
+        const s =
         document.createElement("div");
 
-        star.className = "star";
+        s.className="spark";
 
-        star.innerHTML =
-        icons[Math.floor(
-        Math.random()*icons.length)];
+        s.innerHTML =
+        ["✨","✦"][Math.floor(Math.random()*2)];
 
-        star.style.left =
-        (rect.left + rect.width/2) + "px";
+        s.style.left =
+        (rect.left + rect.width/2 +
+         (Math.random()*80-40))+"px";
 
-        star.style.top =
-        (rect.top + rect.height/2) + "px";
+        s.style.top =
+        (rect.top + rect.height/2)+"px";
 
-        star.style.setProperty(
-        "--x",
-        (Math.random()*500)-250);
-
-        star.style.setProperty(
-        "--y",
-        (-Math.random()*400)-50);
-
-        document.body.appendChild(star);
+        document.body.appendChild(s);
 
         setTimeout(()=>{
-            star.remove();
-        },3000);
+            s.remove();
+        },2500);
 
     }
 
@@ -367,7 +377,7 @@ seal.addEventListener("click",()=>{
         window.location.href =
         canvaLink;
 
-    },4500);
+    },4000);
 
 });
 
