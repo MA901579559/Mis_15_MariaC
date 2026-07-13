@@ -10,7 +10,9 @@
 <meta property="og:description" content="Una noche mágica te espera bajo las estrellas ✨">
 <meta property="og:type" content="website">
 
-<link href="https://apis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400&display=swap
+.googleapis.com">
+.com" crossorigin>
+/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -23,34 +25,27 @@
 body{
     height:100vh;
     overflow:hidden;
-    font-family:'Poppins',sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(to bottom,#0a1030,#191970,#2b1055);
     text-align:center;
-
-    background:
-    radial-gradient(circle at top,#3b2c68,#1b1f4b,#090d24);
+    color:white;
 }
 
 .moon{
     position:absolute;
-    top:60px;
-    right:50px;
+    top:40px;
+    right:40px;
     width:120px;
     height:120px;
     border-radius:50%;
-    background:#fffef2;
-
+    background:#fffde7;
     box-shadow:
-    0 0 30px white,
-    0 0 60px #fff1a8,
-    0 0 100px #fff1a8;
-}
-
-.stars{
-    position:absolute;
-    inset:0;
+    0 0 20px #fff,
+    0 0 60px #fff9c4,
+    0 0 100px #fff9c4;
 }
 
 .star{
@@ -60,102 +55,81 @@ body{
 }
 
 @keyframes twinkle{
-    0%,100%{opacity:.3;}
+    0%,100%{opacity:.2;}
     50%{opacity:1;}
 }
 
 .shooting-star{
     position:absolute;
-    top:-100px;
-    left:-100px;
-    width:4px;
-    height:4px;
-    border-radius:50%;
-    background:white;
-    box-shadow:0 0 15px white;
-
+    width:150px;
+    height:2px;
+    background:linear-gradient(to right,white,transparent);
+    transform:rotate(-35deg);
     animation:shoot 8s linear infinite;
 }
 
-.shooting-star::after{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:2px;
-    background:linear-gradient(to right,white,transparent);
-    transform:rotate(45deg);
-    transform-origin:left center;
-}
-
 @keyframes shoot{
-
     0%{
-        transform:translate(-100px,-100px);
+        top:80px;
+        left:-200px;
         opacity:0;
     }
 
-    10%{
+    15%{
         opacity:1;
     }
 
     100%{
-        transform:translate(800px,800px);
+        top:350px;
+        left:120%;
         opacity:0;
     }
-
 }
 
 .container{
     position:relative;
     z-index:5;
-    color:white;
     padding:20px;
 }
 
 .nombre{
     font-family:'Cinzel',serif;
     color:#ffd700;
-    font-size:2.3rem;
-    margin-bottom:10px;
-
+    font-size:2.2rem;
     text-shadow:
     0 0 10px gold,
     0 0 20px gold;
+    margin-bottom:15px;
 }
 
 .subtitulo{
     margin-bottom:25px;
-    font-size:1rem;
 }
 
 .envelope{
     width:300px;
-    height:200px;
-    margin:auto;
+    height:190px;
     position:relative;
+    margin:auto;
     cursor:pointer;
 }
 
 .base{
+    position:absolute;
     width:100%;
     height:100%;
-    background:#f6f0e6;
+    background:#f8f1e7;
     border-radius:10px;
-    position:absolute;
-
-    box-shadow:
-    0 0 30px rgba(255,215,0,.4);
+    box-shadow:0 0 25px rgba(255,215,0,.4);
 }
 
 .flap{
     position:absolute;
     width:0;
     height:0;
-
     border-left:150px solid transparent;
     border-right:150px solid transparent;
-    border-top:110px solid #e7d8c4;
-
+    border-top:100px solid #e6d5c3;
     transform-origin:top;
     transition:1.5s;
 }
@@ -169,36 +143,28 @@ body{
     width:60px;
     height:60px;
     border-radius:50%;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #b8860b
-    );
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:bold;
+    background:linear-gradient(135deg,#ffd700,#b8860b);
     color:white;
-
-    top:95px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    top:85px;
     left:50%;
     transform:translateX(-50%);
-
-    box-shadow:
-    0 0 20px gold,
-    0 0 40px gold;
+    box-shadow:0 0 20px gold;
 }
 
 .msg{
     position:absolute;
     width:100%;
-    top:150px;
+    top:145px;
     color:#444;
-    font-weight:600;
+    font-weight:bold;
+}
+
+.aviso{
+    margin-top:20px;
 }
 
 .resultado{
@@ -212,29 +178,21 @@ body{
     opacity:1;
 }
 
-.magic{
+.spark{
     position:absolute;
     font-size:24px;
-    animation:subir 3s linear forwards;
+    animation:rise 3s linear forwards;
 }
 
-@keyframes subir{
-
+@keyframes rise{
     from{
         transform:translateY(0);
         opacity:1;
     }
-
     to{
-        transform:translateY(-350px);
+        transform:translateY(-300px);
         opacity:0;
     }
-}
-
-.aviso{
-    margin-top:15px;
-    font-size:.9rem;
-    color:#ddd;
 }
 
 </style>
@@ -244,9 +202,9 @@ body{
 
 <div class="moon"></div>
 
-<div class="stars" id="stars"></div>
-
 <div class="shooting-star"></div>
+
+<div id="stars"></div>
 
 <div class="container">
 
@@ -288,16 +246,13 @@ body{
 
 <script>
 
-const canvaLink =
-"https://mis15macamila.my.canva.site/";
+const canvaLink = "https://mis15macamila.my.canva.site/";
 
-const stars =
-document.getElementById("stars");
+const starsContainer = document.getElementById("stars");
 
-for(let i=0;i<90;i++){
+for(let i=0;i<80;i++){
 
-    const star =
-    document.createElement("div");
+    const star = document.createElement("div");
 
     star.className="star";
     star.innerHTML="✦";
@@ -305,54 +260,46 @@ for(let i=0;i<90;i++){
     star.style.left=Math.random()*100+"%";
     star.style.top=Math.random()*100+"%";
 
-    star.style.fontSize=
-    (Math.random()*10+8)+"px";
+    star.style.fontSize=(8+Math.random()*10)+"px";
 
-    star.style.animationDelay=
-    Math.random()*3+"s";
+    star.style.animationDelay=Math.random()*3+"s";
 
-    stars.appendChild(star);
-
+    starsContainer.appendChild(star);
 }
 
-const envelope =
-document.getElementById("envelope");
+const envelope=document.getElementById("envelope");
 
 envelope.addEventListener("click",()=>{
 
     envelope.classList.add("open");
 
     document
-    .getElementById("mensaje")
-    .classList.add("show");
+        .getElementById("mensaje")
+        .classList.add("show");
 
-    for(let i=0;i<100;i++){
+    for(let i=0;i<70;i++){
 
-        const estrella =
-        document.createElement("div");
+        const spark=document.createElement("div");
 
-        estrella.className="magic";
-        estrella.innerHTML="⭐";
+        spark.className="spark";
+        spark.innerHTML="⭐";
 
-        estrella.style.left=
-        Math.random()*window.innerWidth+"px";
+        spark.style.left=
+            Math.random()*window.innerWidth+"px";
 
-        estrella.style.top=
-        (window.innerHeight/2)+"px";
+        spark.style.top=
+            (window.innerHeight/2)+"px";
 
-        document.body.appendChild(estrella);
+        document.body.appendChild(spark);
 
         setTimeout(()=>{
-            estrella.remove();
+            spark.remove();
         },3000);
     }
 
     setTimeout(()=>{
-
-        window.location.href =
-        canvaLink;
-
-    },4000);
+        window.location.href = canvaLink;
+    },3500);
 
 });
 
