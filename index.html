@@ -10,8 +10,6 @@
 <meta property="og:description" content="Una noche mágica te espera bajo las estrellas ✨">
 <meta property="og:type" content="website">
 
-<link //fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap
-
 <style>
 
 *{
@@ -21,29 +19,119 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(to bottom,#0a1030,#191970,#2b1055);
-    text-align:center;
+    background:linear-gradient(to bottom,#08122f,#151f5d,#2b1055);
+    font-family:Arial,sans-serif;
     color:white;
+    text-align:center;
+}
+
+.container{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    padding:20px;
+    z-index:5;
+}
+
+.nombre{
+    font-size:clamp(28px,6vw,42px);
+    color:#ffd700;
+    margin-bottom:10px;
+    text-shadow:0 0 10px gold;
+}
+
+.subtitulo{
+    font-size:clamp(14px,3vw,18px);
+    margin-bottom:30px;
 }
 
 .moon{
     position:absolute;
-    top:40px;
-    right:40px;
-    width:120px;
-    height:120px;
+    top:30px;
+    right:30px;
+    width:90px;
+    height:90px;
     border-radius:50%;
-    background:#fffde7;
+    background:#fffce6;
     box-shadow:
-    0 0 20px #fff,
-    0 0 60px #fff9c4,
-    0 0 100px #fff9c4;
+        0 0 25px #fff,
+        0 0 60px #fff6b0;
+}
+
+.envelope{
+    width:min(280px,80vw);
+    height:180px;
+    margin:auto;
+    position:relative;
+    cursor:pointer;
+}
+
+.base{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#f8f1e7;
+    border-radius:12px;
+}
+
+.flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:140px solid transparent;
+    border-right:140px solid transparent;
+    border-top:100px solid #e7d8c8;
+    transform-origin:top;
+    transition:1.2s;
+}
+
+.open .flap{
+    transform:rotateX(180deg);
+}
+
+.seal{
+    position:absolute;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ffd700,#c69200);
+    top:75px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:bold;
+    box-shadow:0 0 20px gold;
+}
+
+.msg{
+    position:absolute;
+    width:100%;
+    top:135px;
+    color:#444;
+    font-weight:bold;
+}
+
+.aviso{
+    margin-top:25px;
+}
+
+.mensaje{
+    opacity:0;
+    margin-top:25px;
+    color:#ffd700;
+    transition:1s;
+}
+
+.mensaje.show{
+    opacity:1;
 }
 
 .star{
@@ -53,142 +141,48 @@ body{
 }
 
 @keyframes twinkle{
-    0%,100%{opacity:.2;}
-    50%{opacity:1;}
+    0%,100%{opacity:.2}
+    50%{opacity:1}
 }
 
-.shooting-star{
+.spark{
     position:absolute;
-    width:150px;
+    font-size:22px;
+    animation:subir 3s linear forwards;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-250px);
+        opacity:0;
+    }
+}
+
+.shooting{
+    position:absolute;
+    width:120px;
     height:2px;
-    background:linear-gradient(to right,white,transparent);
+    background:linear-gradient(to right,#fff,transparent);
     transform:rotate(-35deg);
     animation:shoot 8s linear infinite;
 }
 
 @keyframes shoot{
     0%{
-        top:80px;
-        left:-200px;
+        left:-150px;
+        top:100px;
         opacity:0;
     }
-
-    15%{
+    10%{
         opacity:1;
     }
-
     100%{
-        top:350px;
         left:120%;
-        opacity:0;
-    }
-}
-
-.container{
-    position:relative;
-    z-index:5;
-    padding:20px;
-}
-
-.nombre{
-    font-family:'Cinzel',serif;
-    color:#ffd700;
-    font-size:2.2rem;
-    text-shadow:
-    0 0 10px gold,
-    0 0 20px gold;
-    margin-bottom:15px;
-}
-
-.subtitulo{
-    margin-bottom:25px;
-}
-
-.envelope{
-    width:300px;
-    height:190px;
-    position:relative;
-    margin:auto;
-    cursor:pointer;
-}
-
-.base{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:#f8f1e7;
-    border-radius:10px;
-    box-shadow:0 0 25px rgba(255,215,0,.4);
-}
-
-.flap{
-    position:absolute;
-    width:0;
-    height:0;
-    border-left:150px solid transparent;
-    border-right:150px solid transparent;
-    border-top:100px solid #e6d5c3;
-    transform-origin:top;
-    transition:1.5s;
-}
-
-.open .flap{
-    transform:rotateX(180deg);
-}
-
-.seal{
-    position:absolute;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#ffd700,#b8860b);
-    color:white;
-    font-weight:bold;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    top:85px;
-    left:50%;
-    transform:translateX(-50%);
-    box-shadow:0 0 20px gold;
-}
-
-.msg{
-    position:absolute;
-    width:100%;
-    top:145px;
-    color:#444;
-    font-weight:bold;
-}
-
-.aviso{
-    margin-top:20px;
-}
-
-.resultado{
-    margin-top:25px;
-    opacity:0;
-    transition:1s;
-    color:#ffd700;
-}
-
-.resultado.show{
-    opacity:1;
-}
-
-.spark{
-    position:absolute;
-    font-size:24px;
-    animation:rise 3s linear forwards;
-}
-
-@keyframes rise{
-    from{
-        transform:translateY(0);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-300px);
+        top:250px;
         opacity:0;
     }
 }
@@ -199,8 +193,7 @@ body{
 <body>
 
 <div class="moon"></div>
-
-<div class="shooting-star"></div>
+<div class="shooting"></div>
 
 <div id="stars"></div>
 
@@ -217,7 +210,6 @@ body{
     <div class="envelope" id="envelope">
 
         <div class="base"></div>
-
         <div class="flap"></div>
 
         <div class="seal">
@@ -231,10 +223,10 @@ body{
     </div>
 
     <div class="aviso">
-        Toca el sobre para abrir tu invitación
+        Toca el sobre para descubrir tu invitación
     </div>
 
-    <div class="resultado" id="mensaje">
+    <div class="mensaje" id="mensaje">
         ✨ Has recibido una invitación muy especial ✨
         <br><br>
         🌙 Abriendo invitación...
@@ -246,26 +238,24 @@ body{
 
 const canvaLink = "https://mis15macamila.my.canva.site/";
 
-const starsContainer = document.getElementById("stars");
+const stars = document.getElementById("stars");
 
-for(let i=0;i<80;i++){
+for(let i=0;i<60;i++){
 
-    const star = document.createElement("div");
+    const s = document.createElement("div");
 
-    star.className="star";
-    star.innerHTML="✦";
+    s.className = "star";
+    s.innerHTML = "✦";
 
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
+    s.style.left = Math.random()*100 + "%";
+    s.style.top = Math.random()*100 + "%";
 
-    star.style.fontSize=(8+Math.random()*10)+"px";
+    s.style.fontSize = (8 + Math.random()*10) + "px";
 
-    star.style.animationDelay=Math.random()*3+"s";
-
-    starsContainer.appendChild(star);
+    stars.appendChild(s);
 }
 
-const envelope=document.getElementById("envelope");
+const envelope = document.getElementById("envelope");
 
 envelope.addEventListener("click",()=>{
 
@@ -275,18 +265,18 @@ envelope.addEventListener("click",()=>{
         .getElementById("mensaje")
         .classList.add("show");
 
-    for(let i=0;i<70;i++){
+    for(let i=0;i<80;i++){
 
-        const spark=document.createElement("div");
+        const spark = document.createElement("div");
 
-        spark.className="spark";
-        spark.innerHTML="⭐";
+        spark.className = "spark";
+        spark.innerHTML = "⭐";
 
-        spark.style.left=
-            Math.random()*window.innerWidth+"px";
+        spark.style.left =
+            Math.random()*window.innerWidth + "px";
 
-        spark.style.top=
-            (window.innerHeight/2)+"px";
+        spark.style.top =
+            (window.innerHeight/2) + "px";
 
         document.body.appendChild(spark);
 
@@ -298,7 +288,6 @@ envelope.addEventListener("click",()=>{
     setTimeout(()=>{
         window.location.href = canvaLink;
     },3500);
-
 });
 
 </script>
