@@ -7,7 +7,7 @@
 <title>Mis 15 - María Camila</title>
 
 <meta property="og:title" content="Mis 15 - María Camila">
-<meta property="og:description" content="Una noche mágica te espera bajo las estrellas ✨">
+<meta property="og:description" content="Una noche mágica te espera ✨">
 <meta property="og:type" content="website">
 
 <style>
@@ -24,111 +24,135 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(to bottom,#08122f,#151f5d,#2b1055);
+
+    background:
+    linear-gradient(
+        180deg,
+        #f5f9ff,
+        #dfeaf8,
+        #c7d7eb
+    );
+
     font-family:Georgia, serif;
-    color:white;
-    text-align:center;
 }
 
 .container{
+    text-align:center;
     position:relative;
-    width:100%;
-    max-width:600px;
-    padding:20px;
     z-index:5;
+    width:100%;
 }
 
-.nombre{
-    font-size:clamp(42px,8vw,70px);
-    color:#ffd700;
-    margin-bottom:15px;
+.title{
+    margin-bottom:30px;
+    color:#b08a2e;
+    text-shadow:0 0 8px rgba(255,215,0,.4);
+}
+
+.title h1{
+    font-size:clamp(35px,7vw,60px);
     line-height:1.1;
-
-    text-shadow:
-    0 0 10px #ffd700,
-    0 0 20px #ffd700,
-    0 0 40px rgba(255,215,0,.7);
 }
 
-.subtitulo{
-    font-size:clamp(16px,4vw,24px);
-    margin-bottom:35px;
-    color:#fff5d6;
-    line-height:1.5;
+.title p{
+    margin-top:15px;
+    color:#8a7446;
+    font-size:clamp(15px,3vw,22px);
 }
 
-.moon{
-    position:absolute;
-    top:25px;
-    right:25px;
-
-    width:120px;
-    height:120px;
-    border-radius:50%;
-
-    background:#fffde8;
-
-    box-shadow:
-    0 0 30px white,
-    0 0 70px #fff3b0,
-    0 0 120px #fff3b0;
+.envelope-wrapper{
+    width:min(400px,90vw);
+    height:min(400px,90vw);
+    margin:auto;
+    position:relative;
 }
 
 .envelope{
-    width:min(280px,80vw);
-    height:180px;
-    margin:auto;
-    position:relative;
-    cursor:pointer;
-}
-
-.base{
-    position:absolute;
     width:100%;
     height:100%;
-    background:#f8f1e7;
-    border-radius:12px;
-
-    box-shadow:
-    0 0 25px rgba(255,215,0,.4);
+    position:relative;
 }
 
 .flap{
     position:absolute;
-    width:0;
-    height:0;
-
-    border-left:140px solid transparent;
-    border-right:140px solid transparent;
-    border-top:100px solid #e7d8c8;
-
-    transform-origin:top;
-    transition:1.2s;
+    background:#f8fbff;
+    transition:1.5s ease;
+    box-shadow:
+    inset 0 0 15px rgba(255,255,255,.9),
+    0 5px 20px rgba(0,0,0,.08);
 }
 
-.open .flap{
-    transform:rotateX(180deg);
+.top{
+    width:100%;
+    height:50%;
+    top:0;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center;
+}
+
+.bottom{
+    width:100%;
+    height:50%;
+    bottom:0;
+    clip-path:polygon(0 100%,100% 100%,50% 0);
+    transform-origin:bottom center;
+}
+
+.left{
+    width:50%;
+    height:100%;
+    left:0;
+    clip-path:polygon(0 0,100% 50%,0 100%);
+    transform-origin:left center;
+}
+
+.right{
+    width:50%;
+    height:100%;
+    right:0;
+    clip-path:polygon(100% 0,0 50%,100% 100%);
+    transform-origin:right center;
+}
+
+.open .top{
+    transform:translateY(-140px) rotateX(50deg);
+}
+
+.open .bottom{
+    transform:translateY(140px) rotateX(-50deg);
+}
+
+.open .left{
+    transform:translateX(-140px);
+}
+
+.open .right{
+    transform:translateX(140px);
 }
 
 .seal{
     position:absolute;
 
-    width:60px;
-    height:60px;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:80px;
+    height:80px;
 
     border-radius:50%;
 
     background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #b8860b
+    radial-gradient(
+        circle at 30% 30%,
+        #fff4b5,
+        #e0b53a 45%,
+        #b5841f 80%,
+        #8d6517 100%
     );
 
-    top:75px;
-    left:50%;
-
-    transform:translateX(-50%);
+    border:3px solid rgba(255,255,255,.4);
 
     display:flex;
     justify-content:center;
@@ -136,127 +160,95 @@ body{
 
     color:white;
     font-weight:bold;
+    font-size:20px;
+
+    cursor:pointer;
 
     box-shadow:
-    0 0 20px gold,
-    0 0 40px gold;
+    inset 0 2px 10px rgba(255,255,255,.7),
+    inset 0 -5px 8px rgba(0,0,0,.25),
+    0 10px 25px rgba(0,0,0,.2),
+    0 0 25px rgba(212,175,55,.8);
 
     animation:pulse 2s infinite;
+
+    z-index:100;
 }
 
 @keyframes pulse{
 
     0%{
-        box-shadow:
-        0 0 10px gold;
+        transform:translate(-50%,-50%) scale(1);
     }
 
     50%{
-        box-shadow:
-        0 0 35px gold;
+        transform:translate(-50%,-50%) scale(1.08);
     }
 
     100%{
-        box-shadow:
-        0 0 10px gold;
+        transform:translate(-50%,-50%) scale(1);
     }
-
-}
-
-.msg{
-    position:absolute;
-    width:100%;
-    top:135px;
-    color:#444;
-    font-weight:bold;
-}
-
-.aviso{
-    margin-top:25px;
-    color:white;
-}
-
-.mensaje{
-    opacity:0;
-    margin-top:25px;
-    color:#ffd700;
-    transition:1s;
-    font-size:18px;
-}
-
-.mensaje.show{
-    opacity:1;
 }
 
 .star{
     position:absolute;
-    color:#ffd700;
-    animation:twinkle 3s infinite;
+    pointer-events:none;
+    font-size:24px;
+    animation:fly 3s linear forwards;
 }
 
-@keyframes twinkle{
-
-    0%,100%{
-        opacity:.3;
-    }
-
-    50%{
-        opacity:1;
-    }
-
-}
-
-.spark{
-    position:absolute;
-    font-size:22px;
-    animation:subir 3s linear forwards;
-}
-
-@keyframes subir{
+@keyframes fly{
 
     from{
-        transform:translateY(0);
         opacity:1;
+        transform:
+        translate(0,0)
+        scale(.5);
     }
 
     to{
-        transform:translateY(-300px);
         opacity:0;
+        transform:
+        translate(
+        calc(var(--x)*1px),
+        calc(var(--y)*1px))
+        scale(1.6);
     }
 
 }
 
-.shooting{
+.message{
+    margin-top:30px;
+    opacity:0;
+    transition:1s;
+    color:#b08a2e;
+    font-size:22px;
+}
+
+.message.show{
+    opacity:1;
+}
+
+.hint{
+    margin-top:25px;
+    color:#6e6e6e;
+}
+
+.moon{
     position:absolute;
-    width:150px;
-    height:2px;
+    right:50px;
+    top:40px;
 
-    background:
-    linear-gradient(to right,white,transparent);
+    width:100px;
+    height:100px;
 
-    transform:rotate(-35deg);
+    border-radius:50%;
 
-    animation:shoot 8s linear infinite;
-}
+    background:white;
 
-@keyframes shoot{
-
-    0%{
-        left:-150px;
-        top:100px;
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-        left:120%;
-        top:250px;
-        opacity:0;
-    }
-
+    box-shadow:
+    0 0 30px white,
+    0 0 70px rgba(255,255,255,.7);
 }
 
 </style>
@@ -266,114 +258,116 @@ body{
 
 <div class="moon"></div>
 
-<div class="shooting"></div>
-
-<div id="stars"></div>
-
 <div class="container">
 
-    <div class="nombre">
-        Los 15 años de<br>
-        María Camila
+    <div class="title">
+        <h1>
+            Los 15 años de<br>
+            María Camila
+        </h1>
+
+        <p>
+            ✨ Una noche mágica te espera ✨
+        </p>
     </div>
 
-    <div class="subtitulo">
-        ✨ Una noche mágica te espera<br>
-        bajo las estrellas ✨
-    </div>
+    <div class="envelope-wrapper">
 
-    <div class="envelope" id="envelope">
+        <div class="envelope" id="envelope">
 
-        <div class="base"></div>
+            <div class="flap top"></div>
+            <div class="flap bottom"></div>
+            <div class="flap left"></div>
+            <div class="flap right"></div>
 
-        <div class="flap"></div>
+        </div>
 
-        <div class="seal">
+        <div class="seal" id="seal">
             MC
         </div>
 
-        <div class="msg">
-            💌 Ábreme
-        </div>
-
     </div>
 
-    <div class="aviso" id="aviso">
-        Toca el sobre para descubrir tu invitación
+    <div class="hint" id="hint">
+        Toca el sello para abrir la invitación
     </div>
 
-    <div class="mensaje" id="mensaje">
+    <div class="message" id="message">
         ✨ Has recibido una invitación muy especial ✨
         <br><br>
-        🌙 Abriendo invitación...
+        Abriendo invitación...
     </div>
 
 </div>
 
 <script>
 
-const canvaLink = "https://mis15macamila.my.canva.site/";
+const canvaLink =
+"https://mis15macamila.my.canva.site/";
 
-const stars = document.getElementById("stars");
-
-for(let i=0;i<70;i++){
-
-    const s = document.createElement("div");
-
-    s.className = "star";
-
-    s.innerHTML = "✦";
-
-    s.style.left = Math.random()*100 + "%";
-
-    s.style.top = Math.random()*100 + "%";
-
-    s.style.fontSize =
-        (8 + Math.random()*12) + "px";
-
-    stars.appendChild(s);
-}
+const seal =
+document.getElementById("seal");
 
 const envelope =
 document.getElementById("envelope");
 
-envelope.addEventListener("click",()=>{
+seal.addEventListener("click",()=>{
 
     envelope.classList.add("open");
 
-    document
-        .getElementById("mensaje")
-        .classList.add("show");
-    document
-        .getElementById("aviso")
-        .style.display = "none";
-    
-    for(let i=0;i<100;i++){
+    seal.style.display="none";
 
-        const spark =
+    document.getElementById("hint")
+    .style.display="none";
+
+    document.getElementById("message")
+    .classList.add("show");
+
+    const rect =
+    envelope.getBoundingClientRect();
+
+    const icons =
+    ["⭐","✨","🌟","✦"];
+
+    for(let i=0;i<80;i++){
+
+        const star =
         document.createElement("div");
 
-        spark.className = "spark";
+        star.className = "star";
 
-        spark.innerHTML = "⭐";
+        star.innerHTML =
+        icons[Math.floor(
+        Math.random()*icons.length)];
 
-        spark.style.left =
-            Math.random()*window.innerWidth+"px";
+        star.style.left =
+        (rect.left + rect.width/2) + "px";
 
-        spark.style.top =
-            (window.innerHeight/2)+"px";
+        star.style.top =
+        (rect.top + rect.height/2) + "px";
 
-        document.body.appendChild(spark);
+        star.style.setProperty(
+        "--x",
+        (Math.random()*500)-250);
+
+        star.style.setProperty(
+        "--y",
+        (-Math.random()*400)-50);
+
+        document.body.appendChild(star);
 
         setTimeout(()=>{
-            spark.remove();
+            star.remove();
         },3000);
 
     }
 
     setTimeout(()=>{
-        window.location.href = canvaLink;
-    },4000);
+
+        window.location.href =
+        canvaLink;
+
+    },4500);
 
 });
 
