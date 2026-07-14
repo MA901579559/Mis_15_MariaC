@@ -9,242 +9,417 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(
-        180deg,
-        #f8fbff,
-        #e8f0f8,
-        #d5e1ef
-    );
-    font-family:Georgia,serif;
-    overflow:hidden;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+180deg,
+#fafbfe,
+#e8f0f8,
+#d9e4f1
+);
+
+font-family:Georgia,serif;
+
+overflow:hidden;
+text-align:center;
+
 }
 
 .container{
-    width:100%;
-    max-width:700px;
-    padding:20px;
-    text-align:center;
+
+width:100%;
+max-width:700px;
+
+padding:20px;
+
+position:relative;
+
 }
 
 .corona{
-    font-size:34px;
-    margin-bottom:8px;
+
+font-size:38px;
+margin-bottom:5px;
+
 }
 
 .titulo{
-    color:#b58a2f;
-    font-size:28px;
+
+font-size:28px;
+color:#b58b2e;
+
 }
 
 .nombre{
 
-    font-style:italic;
-    font-size:clamp(52px,10vw,85px);
+font-size:clamp(55px,10vw,90px);
 
-    background:
-    linear-gradient(
-        180deg,
-        #fffad8,
-        #f2d87a,
-        #d4af37,
-        #9f7d2a
-    );
+font-style:italic;
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+line-height:1;
 
-    margin-top:5px;
-    margin-bottom:10px;
+margin-top:10px;
+
+background:
+linear-gradient(
+180deg,
+#fff9d6,
+#f3d979,
+#d4af37,
+#9f7d2a
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
 }
 
 .subtitulo{
-    color:#6b7280;
-    font-size:20px;
-    margin-bottom:35px;
-}
 
-.envelope{
+margin-top:10px;
+margin-bottom:35px;
 
-    position:relative;
+font-size:20px;
 
-    width:min(90vw,520px);
-    height:min(70vw,340px);
+color:#6f7681;
 
-    margin:auto;
-}
-
-.base{
-
-    position:absolute;
-    inset:0;
-
-    background:#ffffff;
-
-    border-radius:12px;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.12);
-}
-
-.top{
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:50%;
-
-    background:#f7fbff;
-
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        50% 100%
-    );
-}
-
-.left{
-
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:50%;
-    height:100%;
-
-    background:#ecf3fb;
-
-    clip-path:polygon(
-        0 0,
-        100% 50%,
-        0 100%
-    );
-}
-
-.right{
-
-    position:absolute;
-
-    right:0;
-    top:0;
-
-    width:50%;
-    height:100%;
-
-    background:#ecf3fb;
-
-    clip-path:polygon(
-        100% 0,
-        0 50%,
-        100% 100%
-    );
-}
-
-.seal{
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle at 30% 30%,
-        #fff7c7,
-        #f1cf60,
-        #d4af37,
-        #9f7d2a
-    );
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    box-shadow:
-        inset 0 4px 8px rgba(255,255,255,.8),
-        inset 0 -6px 8px rgba(0,0,0,.2),
-        0 6px 15px rgba(0,0,0,.15);
-
-    animation:pulse 2s infinite;
-}
-
-.seal span{
-
-    font-size:42px;
-    font-style:italic;
-    color:#fff9e3;
-    font-weight:bold;
-}
-
-@keyframes pulse{
-
-    0%,100%{
-        transform:
-        translate(-50%,-50%)
-        scale(1);
-    }
-
-    50%{
-        transform:
-        translate(-50%,-50%)
-        scale(1.05);
-    }
-}
-
-.hint{
-    margin-top:25px;
-    color:#6b7280;
-    font-size:18px;
 }
 
 .butterfly{
 
-    position:absolute;
+position:absolute;
 
-    font-size:28px;
+font-size:28px;
 
-    animation:float 3s ease-in-out infinite;
+animation:float 3s infinite ease-in-out;
+
 }
 
 .b1{
-    left:8%;
-    top:25%;
+
+left:30px;
+top:200px;
+
 }
 
 .b2{
-    right:8%;
-    top:35%;
+
+right:30px;
+top:240px;
+
 }
 
 @keyframes float{
 
-    0%,100%{
-        transform:translateY(0);
-    }
+0%,100%{
+transform:translateY(0);
+}
 
-    50%{
-        transform:translateY(-8px);
-    }
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+.envelope{
+
+position:relative;
+
+width:min(90vw,520px);
+height:320px;
+
+margin:auto;
+cursor:pointer;
+
+}
+
+.base{
+
+position:absolute;
+
+inset:0;
+
+border-radius:15px;
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f4f8fc
+);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.top{
+
+position:absolute;
+
+width:100%;
+height:50%;
+
+background:#f7fbff;
+
+clip-path:
+polygon(
+0 0,
+100% 0,
+50% 100%
+);
+
+transform-origin:top;
+
+transition:1.5s;
+
+z-index:5;
+
+}
+
+.envelope.open .top{
+
+transform:
+rotateX(180deg);
+
+}
+
+.left{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:50%;
+height:100%;
+
+background:#eef4fb;
+
+clip-path:
+polygon(
+0 0,
+100% 50%,
+0 100%
+);
+
+}
+
+.right{
+
+position:absolute;
+
+right:0;
+top:0;
+
+width:50%;
+height:100%;
+
+background:#eef4fb;
+
+clip-path:
+polygon(
+100% 0,
+0 50%,
+100% 100%
+);
+
+}
+
+.seal{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:95px;
+height:95px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle at 30% 30%,
+#fff7c7,
+#f5d573,
+#d4af37,
+#9f7d2a
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:
+inset 0 4px 8px rgba(255,255,255,.8),
+inset 0 -8px 10px rgba(0,0,0,.18),
+0 10px 20px rgba(0,0,0,.15);
+
+animation:pulse 2s infinite;
+
+z-index:10;
+
+}
+
+.seal span{
+
+font-size:50px;
+font-style:italic;
+font-weight:bold;
+
+color:#fff8de;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+50%{
+
+transform:
+translate(-50%,-50%)
+scale(1.08);
+
+}
+
+}
+
+.hint{
+
+margin-top:20px;
+color:#6f7681;
+font-size:18px;
+
+}
+
+.card{
+
+position:absolute;
+
+left:50%;
+bottom:20px;
+
+transform:
+translateX(-50%);
+
+width:85%;
+
+padding:25px;
+
+background:white;
+
+border:2px solid #d8e6f2;
+
+border-radius:12px;
+
+opacity:0;
+
+transition:1.5s;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+z-index:2;
+
+}
+
+.card.show{
+
+opacity:1;
+
+bottom:100px;
+
+}
+
+.card h2{
+
+color:#b58b2e;
+margin-bottom:10px;
+
+}
+
+.card p{
+
+color:#666;
+font-size:18px;
+
+line-height:1.5;
+
+}
+
+.message{
+
+margin-top:25px;
+
+opacity:0;
+
+color:#b58b2e;
+
+font-size:20px;
+
+transition:1s;
+
+}
+
+.message.show{
+
+opacity:1;
+
+}
+
+.spark{
+
+position:absolute;
+
+font-size:20px;
+
+animation:shine 2s linear forwards;
+
+}
+
+@keyframes shine{
+
+from{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+to{
+
+opacity:0;
+
+transform:
+translateY(-180px);
+
+}
+
 }
 
 </style>
@@ -257,39 +432,141 @@ body{
 
 <div class="container">
 
-    <div class="corona">👑</div>
+<div class="corona">👑</div>
 
-    <div class="titulo">
-        Mis 15 Años
-    </div>
+<div class="titulo">
+Mis 15 Años
+</div>
 
-    <div class="nombre">
-        María Camila
-    </div>
+<div class="nombre">
+María Camila
+</div>
 
-    <div class="subtitulo">
-        Celebración de 15 años
-    </div>
+<div class="subtitulo">
+Celebración de 15 años
+</div>
 
-    <div class="envelope">
+<div class="envelope" id="envelope">
 
-        <div class="base"></div>
+<div class="base"></div>
 
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
+<div class="left"></div>
+<div class="right"></div>
 
-        <div class="seal">
-            <span>15</span>
-        </div>
+<div class="top"></div>
 
-    </div>
+<div class="card" id="card">
 
-    <div class="hint">
-        Toca el sello para abrir
-    </div>
+<h2>👑 Mis 15 Años 👑</h2>
+
+<p>
+
+María Camila
+
+<br><br>
+
+Has recibido una invitación
+muy especial
+
+</p>
 
 </div>
+
+<div class="seal" id="seal">
+
+<span>15</span>
+
+</div>
+
+</div>
+
+<div class="hint" id="hint">
+
+✨ Toca el sello para abrir ✨
+
+</div>
+
+<div class="message" id="message">
+
+Abriendo invitación...
+
+</div>
+
+</div>
+
+<script>
+
+const canvaLink =
+"https://mis15macamila.my.canva.site/";
+
+const seal =
+document.getElementById("seal");
+
+const envelope =
+document.getElementById("envelope");
+
+const card =
+document.getElementById("card");
+
+const message =
+document.getElementById("message");
+
+const hint =
+document.getElementById("hint");
+
+seal.addEventListener("click",()=>{
+
+envelope.classList.add("open");
+
+seal.style.display="none";
+
+hint.style.display="none";
+
+card.classList.add("show");
+
+for(let i=0;i<15;i++){
+
+const star =
+document.createElement("div");
+
+star.className="spark";
+
+star.innerHTML =
+Math.random()>0.5 ? "✨" : "✦";
+
+star.style.left =
+(window.innerWidth/2 +
+(Math.random()*200-100))
++"px";
+
+star.style.top =
+(window.innerHeight/2)
++"px";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+star.remove();
+},2000);
+
+}
+
+setTimeout(()=>{
+
+message.classList.add("show");
+
+},2500);
+
+setTimeout(()=>{
+
+window.location.href =
+canvaLink;
+
+},5000);
+
+});
+
+</script>
 
 </body>
 </html>
