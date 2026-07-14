@@ -6,347 +6,245 @@
 
 <title>Mis 15 Años - María Camila</title>
 
-<link rel="ts.googleapis.com
-https://fonts.gstatic.com
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@display=swap
-
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-
-min-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:
-linear-gradient(
-180deg,
-#f8fbff 0%,
-#e9f0f8 50%,
-#d7e3f1 100%
-);
-
-font-family:'Cormorant Garamond',serif;
-
-overflow:hidden;
-
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        180deg,
+        #f8fbff,
+        #e8f0f8,
+        #d5e1ef
+    );
+    font-family:Georgia,serif;
+    overflow:hidden;
 }
 
 .container{
-
-width:100%;
-max-width:700px;
-
-padding:20px;
-
-text-align:center;
-
+    width:100%;
+    max-width:700px;
+    padding:20px;
+    text-align:center;
 }
-
-/* CORONA */
 
 .corona{
-
-font-size:35px;
-margin-bottom:5px;
-
+    font-size:34px;
+    margin-bottom:8px;
 }
-
-/* TITULO */
 
 .titulo{
-
-color:#a88528;
-
-font-size:clamp(24px,4vw,32px);
-
-margin-bottom:10px;
-
+    color:#b58a2f;
+    font-size:28px;
 }
-
-/* NOMBRE */
 
 .nombre{
 
-font-family:'Great Vibes',cursive;
+    font-style:italic;
+    font-size:clamp(52px,10vw,85px);
 
-font-size:clamp(60px,10vw,95px);
+    background:
+    linear-gradient(
+        180deg,
+        #fffad8,
+        #f2d87a,
+        #d4af37,
+        #9f7d2a
+    );
 
-line-height:1;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-margin-bottom:10px;
-
-background:
-linear-gradient(
-180deg,
-#fffadf,
-#f8dd7b,
-#d4af37,
-#9f7d2a
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 2px 3px rgba(0,0,0,.08);
-
+    margin-top:5px;
+    margin-bottom:10px;
 }
-
-/* SUBTITULO */
 
 .subtitulo{
-
-font-size:clamp(16px,3vw,22px);
-
-color:#6f7278;
-
-margin-bottom:35px;
-
+    color:#6b7280;
+    font-size:20px;
+    margin-bottom:35px;
 }
-
-/* MARIPOSAS */
-
-.butterfly{
-
-position:absolute;
-
-font-size:32px;
-
-animation:wings 3s infinite ease-in-out;
-
-}
-
-.b1{
-top:120px;
-left:30px;
-}
-
-.b2{
-top:180px;
-right:35px;
-}
-
-@keyframes wings{
-
-0%,100%{
-transform:rotate(-5deg);
-}
-
-50%{
-transform:rotate(5deg);
-}
-
-}
-
-/* SOBRE */
 
 .envelope{
 
-position:relative;
+    position:relative;
 
-width:min(90vw,500px);
+    width:min(90vw,520px);
+    height:min(70vw,340px);
 
-aspect-ratio:1.1;
-
-margin:auto;
-
+    margin:auto;
 }
-
-/* BASE */
 
 .base{
 
-position:absolute;
+    position:absolute;
+    inset:0;
 
-inset:0;
+    background:#ffffff;
 
-border-radius:12px;
+    border-radius:12px;
 
-background:
-
-linear-gradient(
-180deg,
-#ffffff,
-#f5f8fc
-);
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.12);
-
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
 }
-
-/* SOLAPA SUPERIOR */
 
 .top{
 
-position:absolute;
+    position:absolute;
 
-top:0;
+    top:0;
+    left:0;
 
-width:100%;
-height:50%;
+    width:100%;
+    height:50%;
 
-background:#f8fbff;
+    background:#f7fbff;
 
-clip-path:
-polygon(
-0 0,
-100% 0,
-50% 100%
-);
-
-box-shadow:
-0 2px 8px rgba(0,0,0,.05);
-
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
 }
-
-/* SOLAPA IZQUIERDA */
 
 .left{
 
-position:absolute;
+    position:absolute;
 
-left:0;
-top:0;
+    left:0;
+    top:0;
 
-width:50%;
-height:100%;
+    width:50%;
+    height:100%;
 
-background:#eef4fb;
+    background:#ecf3fb;
 
-clip-path:
-polygon(
-0 0,
-100% 50%,
-0 100%
-);
-
+    clip-path:polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
 }
-
-/* SOLAPA DERECHA */
 
 .right{
 
-position:absolute;
+    position:absolute;
 
-right:0;
-top:0;
+    right:0;
+    top:0;
 
-width:50%;
-height:100%;
+    width:50%;
+    height:100%;
 
-background:#eef4fb;
+    background:#ecf3fb;
 
-clip-path:
-polygon(
-100% 0,
-0 50%,
-100% 100%
-);
-
+    clip-path:polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
 }
-
-/* SELLO */
 
 .seal{
 
-position:absolute;
+    position:absolute;
 
-left:50%;
-top:50%;
+    left:50%;
+    top:50%;
 
-transform:
-translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 
-width:95px;
-height:95px;
+    width:90px;
+    height:90px;
 
-border-radius:50%;
+    border-radius:50%;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    background:
+    radial-gradient(
+        circle at 30% 30%,
+        #fff7c7,
+        #f1cf60,
+        #d4af37,
+        #9f7d2a
+    );
 
-background:
-radial-gradient(
-circle at 30% 30%,
-#fff7c5,
-#f3d267,
-#d4af37,
-#9f7d2a
-);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-box-shadow:
-inset 0 4px 8px rgba(255,255,255,.8),
-inset 0 -8px 10px rgba(0,0,0,.18),
-0 10px 20px rgba(0,0,0,.15);
+    box-shadow:
+        inset 0 4px 8px rgba(255,255,255,.8),
+        inset 0 -6px 8px rgba(0,0,0,.2),
+        0 6px 15px rgba(0,0,0,.15);
 
-animation:pulse 2.5s infinite;
-
-cursor:pointer;
-
-z-index:20;
-
+    animation:pulse 2s infinite;
 }
 
 .seal span{
 
-font-family:'Great Vibes',cursive;
-
-font-size:48px;
-
-background:
-linear-gradient(
-180deg,
-#fff8db,
-#ffe68d,
-#d4af37,
-#9f7d2a
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
+    font-size:42px;
+    font-style:italic;
+    color:#fff9e3;
+    font-weight:bold;
 }
 
 @keyframes pulse{
 
-0%,100%{
+    0%,100%{
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
 
-transform:
-translate(-50%,-50%)
-scale(1);
-
-}
-
-50%{
-
-transform:
-translate(-50%,-50%)
-scale(1.07);
-
-}
-
+    50%{
+        transform:
+        translate(-50%,-50%)
+        scale(1.05);
+    }
 }
 
 .hint{
+    margin-top:25px;
+    color:#6b7280;
+    font-size:18px;
+}
 
-margin-top:25px;
+.butterfly{
 
-color:#6f7278;
+    position:absolute;
 
-font-size:18px;
+    font-size:28px;
 
+    animation:float 3s ease-in-out infinite;
+}
+
+.b1{
+    left:8%;
+    top:25%;
+}
+
+.b2{
+    right:8%;
+    top:35%;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 </style>
@@ -359,47 +257,37 @@ font-size:18px;
 
 <div class="container">
 
-<div class="corona">👑</div>
+    <div class="corona">👑</div>
 
-<div class="titulo">
+    <div class="titulo">
+        Mis 15 Años
+    </div>
 
-Mis 15 Años
+    <div class="nombre">
+        María Camila
+    </div>
 
-</div>
+    <div class="subtitulo">
+        Celebración de 15 años
+    </div>
 
-<div class="nombre">
+    <div class="envelope">
 
-María Camila
+        <div class="base"></div>
 
-</div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
 
-<div class="subtitulo">
+        <div class="seal">
+            <span>15</span>
+        </div>
 
-Celebración de 15 años
+    </div>
 
-</div>
-
-<div class="envelope">
-
-<div class="base"></div>
-
-<div class="left"></div>
-<div class="right"></div>
-<div class="top"></div>
-
-<div class="seal">
-
-<span>15</span>
-
-</div>
-
-</div>
-
-<div class="hint">
-
-Toca el sello para abrir
-
-</div>
+    <div class="hint">
+        Toca el sello para abrir
+    </div>
 
 </div>
 
